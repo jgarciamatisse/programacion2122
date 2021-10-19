@@ -3,7 +3,7 @@ package _02ejemplos;
 public class _01Literales {
 	public static void main(String[] args) {
 		
-		int num1 = 10;
+		int num1 = 10; 
 		int num2 = 010;
 		int num3 = 0x10;
 		System.out.println(num1);
