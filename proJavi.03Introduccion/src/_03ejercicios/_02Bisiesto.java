@@ -18,6 +18,18 @@ public class _02Bisiesto {
 			System.out.println("Año: ");
 			anyo = tec.nextInt();
 		}
+		
+		do {
+			System.out.println("Año: ");
+			anyo = tec.nextInt();
+			if (anyo > 0) {
+				if(esBisiesto(anyo)) {
+					System.out.println("Bisiesto");
+				} else {
+					System.out.println("No bisiesto");
+				}
+			}
+		} while (anyo > 0);
 	}
 	public static boolean esBisiesto(int anyo) {
 		boolean resultado;
