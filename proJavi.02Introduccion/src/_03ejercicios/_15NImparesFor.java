@@ -2,19 +2,17 @@ package _03ejercicios;
 
 import java.util.Scanner;
 
-public class _14ImparesHastaN {
+public class _15NImparesFor {
 	public static void main(String[] args) {
 		Scanner tec = new Scanner(System.in);
-		System.out.println("Impares hasta n. Introduce n: ");
+		System.out.println("n numeros impares. Introduce n: ");
 		int n = tec.nextInt();
 		
 		int impar = 1;
-		while(impar <= n) {
+		for(int cont = 0; cont < n; cont ++) {
 			System.out.println(impar);
-			impar = impar + 2;
+			impar += 2;
 		}
-		
-		
 		
 	}
 }
