@@ -143,4 +143,65 @@ public class _02Lluvias {
 		
 		return cont;
 	}
+	
+	public static int primerDiaLluviaX (double[] p, double x) {
+		boolean encontrado = false;
+		int i = 0;
+		while (i < p.length && !encontrado) {
+			if(p[i] == x) {
+				encontrado = true;
+			} else {
+				i++;
+			}
+		}
+		
+		int primerDia;
+		if(encontrado) {
+			primerDia = i;
+		} else {
+			primerDia = -1;
+		}
+		return primerDia;
+		
+	}
+	public static int primerDiaLluviaX2 (double[] p, double x) {
+		boolean encontrado = false;
+		int primerDia = -1;
+
+		for(int i = 0; i < p.length && !encontrado; i++) {
+			if(p[i] == x) {
+				primerDia = i;
+				encontrado = true;
+			}
+		}
+		return primerDia;
+	}
+	public static int primerDiaLluviaX3 (double[] p, double x) {
+		int i = 0;
+		while(i < p.length && p[i] != x) {
+			i++;
+		}
+		int primerDia;
+		if(i < p.length) {
+			primerDia = i;
+		} else {
+			primerDia = -1;
+		}
+		
+		return primerDia;
+	}
+	
+	public static int ultimoDiaLluviaX (double[] p, double x) {
+		boolean encontrado = false;
+		int primerDia = -1;
+
+		for(int i = p.length - 1; i >= 0 && !encontrado; i--) {
+			if(p[i] == x) {
+				primerDia = i;
+				encontrado = true;
+			}
+		}
+		return primerDia;
+	}
+
 }
