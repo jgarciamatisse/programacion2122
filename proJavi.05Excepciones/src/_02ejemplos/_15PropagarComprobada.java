@@ -1,13 +1,13 @@
-package _03ejercicios;
+package _02ejemplos;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class _15PropagarComprobada {
-	
+	static Scanner tec = new Scanner(System.in);
 	public static void main(String[] args) {
-		Scanner tec = new Scanner(System.in);
+		
 		String nombreFichero = "";
 		do {
 			System.out.println("Nombre de fichero");
@@ -22,10 +22,8 @@ public class _15PropagarComprobada {
 					System.out.println("Vuelve a introducirlo");
 				}
 			}
-			
 		}  while (!nombreFichero.equals(""));
 	}
-
 	public static int sumarFichero(String nombreFichero) throws FileNotFoundException {
 		Scanner f = null;
 		int suma = 0;
@@ -40,12 +38,5 @@ public class _15PropagarComprobada {
 		}
 		return suma;
 	}
-	
-	
-	
-	
-	
-	
-	
 	
 }
