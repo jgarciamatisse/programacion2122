@@ -10,7 +10,7 @@ import java.util.Scanner;
  * Modificar el programa para que si el instante de tiempo introducido es incorrecto,
  * lo vuelva a pedir
  */
-public class Test {
+public class Test2 {
 	static Scanner tec = new Scanner(System.in);
 	//Pedir al usuario hora de entrada y hora de salida, que tienen
 	//que ser distintas
@@ -35,24 +35,18 @@ public class Test {
 	}
 	public static Tiempo leerTiempo() {
 		boolean ok = false;
-		int h,m,s;
+		
 		Tiempo t = null;
 		do {
 			try {
-		
-				System.out.println("Hora: "); 
-				h = tec.nextInt();
-				System.out.println("Minuto: ");
-				m = tec.nextInt();
-				System.out.println("Segundo: ");
-				s = tec.nextInt();
-				t = new Tiempo(h,m,s);
+				System.out.println("(hh:mm:ss): ");
+				String s = tec.next();
+				t = new Tiempo(s);
 				ok = true;
-			} catch (InputMismatchException e) {
-				tec.nextLine();
-				System.out.println("El dato tiene que ser entero");
+			} catch (IllegalArgumentException e) {
+				System.out.println("Dato incorrecto");
 			}
-		} while (!ok);
+		}while(!ok);
 		return t;
 	}
 }
