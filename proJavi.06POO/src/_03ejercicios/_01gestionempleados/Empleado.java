@@ -7,5 +7,5 @@ public class Empleado {
 	private double sueldo;
 	
 	
-
+ 
 }
