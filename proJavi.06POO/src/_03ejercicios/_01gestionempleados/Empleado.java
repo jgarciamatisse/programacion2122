@@ -65,6 +65,7 @@ public class Empleado {
 		return antig;
 	}
 
+	
 	public void incrementarSueldo(double porcentaje) {
 		sueldo = sueldo + sueldo * porcentaje / 100;
 		// setSueldo(sueldo + sueldo * porcentaje / 100);
