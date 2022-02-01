@@ -78,6 +78,11 @@ public class Empleado {
 		
 		//return String.format("Nombre: %s%nDNI: %s%nAño de ingreso: %d%nSueldo: %f", nombre,dni,anyo,sueldo);
 	}
+//	public String toString() {
+//		return  nombre + " - "  + dni + " - "  + anyo + " - "  + sueldo;
+//		
+//		//return String.format("Nombre: %s%nDNI: %s%nAño de ingreso: %d%nSueldo: %f", nombre,dni,anyo,sueldo);
+//	}
 
 	public boolean equals(Object o) {
 		if (this == o)
@@ -93,7 +98,7 @@ public class Empleado {
 //		}
 		return this.dni.equals(((Empleado)o).dni);
 	}
-
+	
 	public int compareTo(Empleado e) {
 		if(this.dni.compareTo(e.dni) < 0) return -1;
 		else if (this.dni.compareTo(e.dni) > 0) return 1;

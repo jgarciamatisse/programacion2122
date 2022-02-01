@@ -33,6 +33,10 @@ public class TestEmpresa {
 			System.out.println("contratacion fallida");
 		}
 
+		System.out.println(matisse.toString());
+
+		//Subir un 10% a quienes cumplen un trienio.
+		matisse.subirTrienio(10);
 	}
 
 }
