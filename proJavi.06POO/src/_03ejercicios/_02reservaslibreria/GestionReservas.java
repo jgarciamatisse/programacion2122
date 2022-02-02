@@ -58,24 +58,38 @@ public class GestionReservas {
                     break;
                 case 2:
                     System.out.println("---- CANCELAR RESERVA ----");
-                    //Completar
+                    System.out.println("NIF: ");
+                    nif = tec.nextLine();
+                    System.out.println("Codigo libro: ");
+                    codigo = tec.nextInt();
 
+                    try{
+                        l.cancelar(nif,codigo);
+                    }catch(NoSuchElementException e ){
+                        System.out.println("La reserva indicada no existe");
+                    }
                     break;
                 case 3:
                     System.out.println("--- PEDIDO ---");
-                    //Completar
+
+                    System.out.println("Codigo libro: ");
+                    codigo = tec.nextInt();
+                    ejemplares = l.numEjemplaresReservadosLibro(codigo);
+                    System.out.println("Se han reservado " + ejemplares + " ejemplares en total");
 
                     break;
 
                 case 4:
                     System.out.println("--- RECEPCION ---");
-                    //Completar
-                    
+                    System.out.println("Codigo libro: ");
+                    codigo = tec.nextInt();
+
+                    System.out.println("Estos son los clientes que han reservado el libro: ");
+                    l.reservasLibro(codigo);
                     break;
                 case 5:
                     System.out.println("--- LISTADO  ---");
-                    //Completar
-
+                    System.out.println(l.toString());
                     break;
             }
         }while(opc != 6);
