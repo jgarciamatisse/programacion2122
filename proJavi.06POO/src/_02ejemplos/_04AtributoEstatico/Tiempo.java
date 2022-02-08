@@ -1,4 +1,6 @@
-package _02ejemplos._03Tiempo;
+package _02ejemplos._04AtributoEstatico;
+
+import java.util.Scanner;
 
 /**
  * Clase para representar un instante de tiempo del dia, con precisión de
@@ -158,5 +160,16 @@ public class Tiempo implements Comparable <Tiempo>{
 		int n1 = this.hora * 3600 * this.minuto * 60 + this.segundo;
 		int n2 = t.hora * 3600 * t.minuto * 60 + t.segundo;
 		return n1-n2;
+	}
+	
+	public static Tiempo leerTiempo() {
+		Scanner tec = Teclado.getInstance();
+		System.out.println("Hora: ");
+		int h = tec.nextInt();
+		System.out.println("Minuto: ");
+		int m = tec.nextInt();
+		System.out.println("Segundo: ");
+		int s = tec.nextInt();
+		return new Tiempo(h,m,s);
 	}
 }

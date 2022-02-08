@@ -55,6 +55,7 @@ public class Empleado {
 	// Antiguedad
 	// Otros métodos
 	public int antiguedad() {
+		
 		int actual = Calendar.getInstance().get(Calendar.YEAR);
 		int antig;
 		if (actual > anyo) {
