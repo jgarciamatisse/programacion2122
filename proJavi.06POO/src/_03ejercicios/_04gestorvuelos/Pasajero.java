@@ -28,5 +28,4 @@ public class Pasajero {
 		if(!(o instanceof Pasajero)) return false;
 		return this.dni.equals(((Pasajero)o).dni);
 	}
-
 }
