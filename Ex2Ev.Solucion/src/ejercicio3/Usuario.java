@@ -51,25 +51,9 @@ public class Usuario implements Comparable<Usuario> {
 			return this.dominio.compareTo(dominio);
 	}
 
-	public static int calcularFortaleza(String pwd) {
-		int longitud = pwd.length();
-		pwd = pwd.toLowerCase();
-		if (longitud < 6) {
-			return BAJA;
-		} else if (longitud > 10) {
-			if ((pwd.contains("a") || pwd.contains("e") || pwd.contains("i") || pwd.contains("o") || pwd.contains("u"))
-					&& !pwd.contains("a") || !pwd.contains("e") || !pwd.contains("i") || !pwd.contains("o")
-					|| !pwd.contains("u")) {
-				return ALTA;
-			} else {
-				return MEDIA;
-			}
-		} else {
-			return MEDIA;
-		}
-	}
 
-	public static int calcularFortaleza2(String pwd) {
+
+	public static int calcularFortaleza(String pwd) {
 		int longitud = pwd.length();
 		pwd = pwd.toLowerCase();
 		if (longitud < 6) {
@@ -93,7 +77,7 @@ public class Usuario implements Comparable<Usuario> {
 		}
 	}
 
-	public static int calcularFortaleza3(String pwd) {
+	public static int calcularFortaleza2(String pwd) {
 		int longitud = pwd.length();
 		pwd = pwd.toLowerCase();
 		if (longitud < 6) {
