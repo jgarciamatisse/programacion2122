@@ -3,7 +3,7 @@ package ejercicio1;
 public class Ejercicio1 {
 	public static void main(String[] args) {
 		int[][] hacheMayuscula = {
-				{0,0,0,0,0,0},
+				{0,0,0,0,0,0}, 
 				{0,1,0,0,1,0},
 				{0,1,0,0,1,0},
 				{0,1,1,1,1,0},
