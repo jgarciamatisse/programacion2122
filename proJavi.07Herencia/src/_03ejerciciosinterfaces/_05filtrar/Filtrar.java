@@ -14,26 +14,49 @@ public class Filtrar {
 		l.add(new Revista("R2", "Caza y pesca", 2015, 2));
 		l.add(new Libro("L1", "Dejar de fumar", 2000));
 		l.add(new Libro("L2", "Recetas faciles", 2002));
+		l.add(new Libro("L2", "Casa", 2002));
 		
-		//Mostrar publicaciones cuyo año es par
-		mostrarPubFiltradas(l,p -> p.getAnyo()%2 == 0);
-		//Mostrar las publicaciones cuyo título tiene una longitud mayor que 5
-		mostrarPubFiltradas(l,p -> p.getTitulo().length() > 5);
+		//Usando una clase externa
+		mostrarFiltrado(l, new FiltroAnyoParExterna());
+
+		//Usando clase interna
+		mostrarFiltrado(l, new FiltroAnyoParInterna());
 		
-		//Mostrar las publicaciones del año actual
+		//Usando clase anonima
+		mostrarFiltrado(l, new Predicate<Publicacion> () {
+			@Override
+			public boolean test(Publicacion p) {
+				if(p.getAnyo() % 2 == 0) return true;
+				else return false;
+			}
+			
+		});
 		
-		//Mostrar las publicaciones cuyo año está entre 2000 y 2005 y cuyo título
-		// contiene la palabra “casa”.
+		//Usando una expresión lambda
+		mostrarFiltrado(l, 
+				(p) -> { return p.getAnyo() % 2 == 0;}
+		);
 		
-		//Mostrar las publicaciones que son libros
+		//Usando una expresión lambda
+		mostrarFiltrado(l, 
+						p -> p.getAnyo() % 2 == 0
+		);
 	}
 	
-	public static void mostrarPubFiltradas(ArrayList<Publicacion> l, Predicate<Publicacion> pred ) {
+	public static void mostrarFiltrado(ArrayList<Publicacion> l, Predicate<Publicacion> pred) {
 		for(Publicacion p: l) {
 			if(pred.test(p)) {
 				System.out.println(p);
 			}
 		}
-		
 	}
+}
+class FiltroAnyoParInterna implements Predicate<Publicacion> {
+
+	@Override
+	public boolean test(Publicacion p) {
+		if(p.getAnyo() % 2 == 0) return true;
+		else return false;
+	}
+	
 }
