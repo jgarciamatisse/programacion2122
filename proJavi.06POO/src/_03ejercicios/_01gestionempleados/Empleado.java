@@ -99,6 +99,9 @@ public class Empleado {
 //		}
 		return this.dni.equals(((Empleado)o).dni);
 	}
+	public int hashCode() {
+		return this.dni.hashCode();
+	}
 	
 	public int compareTo(Empleado e) {
 		if(this.dni.compareTo(e.dni) < 0) return -1;
