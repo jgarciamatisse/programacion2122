@@ -5,18 +5,48 @@ import java.util.Arrays;
 
 public class Ejercicio5 {
 	public static void main(String[] args) {
-		ArrayList<String> listaPalabras = new ArrayList<>(Arrays.asList(new String[]{"casa","coche","silla","lampara"}));
-		//Mostramos la lista original
+		ArrayList<String> listaPalabras = new ArrayList<>(
+				Arrays.asList(new String[] { "casa", "coche", "silla", "lampara" }));
+		// Mostramos la lista original
 		System.out.println(listaPalabras);
-		//------
+		// ------
+
+		// COMPLETAR: Convertir todas las palabras de la lista a mayï¿½sculas usando el
+		// mï¿½todo Listas.modificarElementosLista
+		// Con una clase interna
+		Listas.modificarElementosLista(listaPalabras, new ModificadorAMayusculas());
+
+		// Con una clase anÃ³nima
+		Listas.modificarElementosLista(listaPalabras, new Modificador<String>() {
+			@Override
+			public String modificar(String s) {
+				return s.toUpperCase();
+			}
+
+		});
+
+		//Con una expresiÃ³n lambda
+		Listas.modificarElementosLista(listaPalabras, (s) -> {return s.toUpperCase();});
 		
-		//COMPLETAR: Convertir todas las palabras de la lista a mayúsculas usando el método Listas.modificarElementosLista
+		//Otro ejemplo: Dejar cada elemento de la lista a longitud 1
+		Listas.modificarElementosLista(listaPalabras, (s) -> {return s.substring(0,1);});
 		
 		
-		//------
 		
-		//Volvemos a mostrar la lista
+		
+		// ------
+
+		// Volvemos a mostrar la lista
 		System.out.println(listaPalabras);
-		//------
+		// ------
 	}
+}
+
+class ModificadorAMayusculas implements Modificador<String> {
+
+	@Override
+	public String modificar(String s) {
+		return s.toUpperCase();
+	}
+
 }

@@ -14,6 +14,9 @@ public class DarFormacion {
             new Desempleado(),
             new EstudianteCCFF()
         };
+        
+        for(int i = 0; i < v.length; i++) {
+        	((Formable)v[i]).formar(100);
+        }
     }
-    //Anyadir aquí el método darFormacion que se pide en el enunciado y llamalo desde el main
 }

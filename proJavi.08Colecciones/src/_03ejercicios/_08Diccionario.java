@@ -14,6 +14,12 @@ public class _08Diccionario {
 		System.out.println(anyadirTraduccion(diccionario, "coche","car"));	//false
 		
 		System.out.println(diccionario);
+
+		quitarTraduccion(diccionario, "coche", "car");
+		quitarTraduccion(diccionario, "casa", "house");
+		
+		System.out.println(diccionario);
+		
 		
 	}
 	public static boolean anyadirTraduccion(Map<String, Set<String>> m, String cast, String ingl) {
@@ -38,4 +44,51 @@ public class _08Diccionario {
 		}
 		
 	}
+	public static boolean quitarTraduccion(Map<String, Set<String>> m, String cast, String ingl) {
+		Set<String> traducciones = m.get(cast);
+		if(traducciones == null) {
+			//No tenemos la palabra cast en el diccionario
+			return false;
+		} else {
+//			if(traducciones.contains(ingl)) {
+//				traducciones.remove(ingl);
+//				//Si se queda sin traducciones, eliminamos la pareja del map
+//				if(traducciones.isEmpty()) {
+//					m.remove(cast);
+//				}
+//				return true;
+//			} else {
+//				return false;
+//			}
+			//De otra forma
+			boolean estaba = traducciones.remove(ingl);
+			if(estaba && traducciones.isEmpty()) {
+				m.remove(cast);
+			}
+			return estaba;
+			
+		}
+	}
+	
+	public static Set<String> traduccionesDe (Map<String, Set<String>> m, String cast) {
+		return m.get(cast);
+	}
+	
+	public static boolean quitarTraducciones(Map<String, Set<String>> m, String cast) {
+		if(m.containsKey(cast)) {
+			m.remove(cast);
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
+
+
+
+
+
+
+
+
+
